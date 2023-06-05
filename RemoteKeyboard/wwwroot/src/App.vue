@@ -25,7 +25,7 @@ const wrap = ref(null as unknown as HTMLDivElement)
                 settings
                 
             </div>
-            <div @click="wrap.requestFullscreen()" class="bg-violet-700 p-5 wounded-r-2xl hover:bg-violet-900">
+            <div @click="wrap.requestFullscreen()" class="bg-violet-700 p-5 rounded-r-2xl hover:bg-violet-900">
                 go play
             </div>
         </div>
