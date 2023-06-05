@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <OutputType>exe</OutputType>
+        <LangVersion>11</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="InputSimulator" Version="1.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="wwwroot\dist\**\*" LinkBase="wwwroot\" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+
+    <Target Name="ViteBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="npm install" WorkingDirectory="wwwroot\" />
+        <Exec Command="vite build" WorkingDirectory="wwwroot\" />
+    </Target>
+
+    <ItemGroup>
+        <Watch Include="wwwroot\**\*.js" Exclude="wwwroot\node_modules\**\*;build\*" />
+        <Watch Include="wwwroot\**\*.ts" Exclude="wwwroot\node_modules\**\*;build\*" />
+        <Watch Include="wwwroot\**\*.vue" Exclude="wwwroot\node_modules\**\*;build\*" />
+        <Watch Include="wwwroot\**\*.json" Exclude="wwwroot\node_modules\**\*;build\*" />
+        <Watch Include="wwwroot\**\*.css" Exclude="wwwroot\node_modules\**\*;build\*" />
+        <Watch Include="wwwroot\**\*.html" Exclude="wwwroot\node_modules\**\*;build\*" />
+    </ItemGroup>
+</Project>

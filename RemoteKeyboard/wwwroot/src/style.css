@@ -1,0 +1,22 @@
+@tailwind base;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+:root::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+:root {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* prevent select */
+:root, div {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+@tailwind components;
+@tailwind utilities;
