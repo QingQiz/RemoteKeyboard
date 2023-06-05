@@ -18,7 +18,7 @@
 
     <Target Name="ViteBuild" BeforeTargets="PreBuildEvent">
         <Exec Command="npm install" WorkingDirectory="wwwroot\" />
-        <Exec Command="vite build" WorkingDirectory="wwwroot\" />
+        <Exec Command="npx vite build" WorkingDirectory="wwwroot\" />
     </Target>
 
     <ItemGroup>
